@@ -2,7 +2,7 @@
 
 #Config
 
-```
+```json
   {
     "channel": "", // Channel, where will users sends commands
     "collector": 500000, // time that the collector will record
