@@ -1,0 +1,22 @@
+  {
+    "channel": "",
+    "collector": 500000,
+    "reactions": 2,
+    "tokens": [""],
+    "webhook": {
+      "enabled": false,
+      "id": "",
+      "token": ""
+    },
+    "time": {
+      "drop": {
+        "delay": 1800000,
+        "random": 130000
+      },
+      "wait": {
+        "enabled": true,
+        "starttime": 19,
+        "endtime": 0
+      }
+    }
+  }
