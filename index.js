@@ -10,10 +10,10 @@ config.tokens.forEach(token => {
     console.log(`Logged in as ${client.user.tag}!`);
     const channel = client.channels.cache.get(config.channel);
     setInterval(function() {
-      if(config.time.wait == true){
+      if(config.time.wait.enabled == true){
         var d = new Date();
         var n = d.getHours();
-        if (n < config.time.wait.starttime || n > config.time.wait.endtime ) {
+        if (n < config.time.wait.starttime && n > config.time.wait.endtime ) {
           channel.send("kd");
         }
       }else{
@@ -26,7 +26,9 @@ config.tokens.forEach(token => {
     if (message.author.bot) {
       if (message.content.includes(`<@${client.user.id}> took the`) || message.content.includes(`<@${client.user.id}> fought off`)) {
         if (message.channel == config.channel) {
-          webhookClient.send(message.content);
+          if(config.webhook.enabled == true){
+            webhookClient.send(message.content);
+          }
           console.log(`${client.user.tag} took the card`);
         }
       }
@@ -53,5 +55,3 @@ config.tokens.forEach(token => {
   });
   client.login(token);
 })
-
-
