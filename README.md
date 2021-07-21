@@ -4,8 +4,8 @@
 
 ```
   {
-    "channel": "", // Channel, where will users sends commands
-    "collector": 500000, // time that the collector will record
+    "channel": "", // Channel, where will bots sends commands
+    "collector": 500000, // time for which the collector will record the drop
     "reactions": 2, // How many reactions must there be on the drop for the bot to snipe
     "tokens": [""], // User tokens
     "webhook": {
