@@ -27,26 +27,26 @@ config.tokens.forEach(token => {
       if (message.content.includes(`<@${client.user.id}> took the`) || message.content.includes(`<@${client.user.id}> fought off`)) {
         if (message.channel == config.channel) {
           webhookClient.send(message.content);
-          console.log("Sebralo to kartu");
+          console.log(`${client.user.tag} took the card`);
         }
       }
       if (message.content.includes(`<@${client.user.id}> is dropping`)) {
-        console.log(client.user.tag + " Dropuje karty")
+        console.log(client.user.tag + " is dropping cards")
         const filter = (reaction, user) => {
           return ["1️⃣", "2️⃣", "3️⃣", "4️⃣"].includes(reaction.emoji.name)
         };
         const collector = message.createReactionCollector(filter);
         collector.on('collect', (reaction, user) => {
           if (reaction.count > config.reactions) {
-            console.log("Byly zanamenany 3 reakce, reaguji")
+            console.log(`${config.reactions} reactions were recorded`)
             message.react(reaction._emoji.name);
             collector.stop();
-            console.log("Vypinam collector")
+            console.log("Disabling collector")
           }
         });
         setTimeout(() => {
           collector.stop();
-          console.log("vypinam collector protoze nikdo nereagoval")
+          console.log("Disabling collector beacuse noone reacted")
         }, config.collector)
       }
     }
