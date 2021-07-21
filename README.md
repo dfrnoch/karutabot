@@ -18,7 +18,7 @@
         "delay": 1800000, // How often should the bot drop cards (30min default)
         "random": 130000 // Adds random amount of time
       },
-      "wait": { // Bot will stop dropping cards for amount of time
+      "wait": { // Bot will stop dropping cards for amount of time (0-23)
         "enabled": true,
         "starttime": 19, // When is the bot supposed to stop doping cards
         "endtime": 0 // When is the bot supposed to start dropping cards again
